@@ -1,12 +1,12 @@
 import firebase from "firebase";
 
 const config = {
-  apiKey: "AIzaSyA2I6VsrmBhnkuTJA_pOv4GkcONPW65AHU",
-  authDomain: "fir-10997.firebaseapp.com",
-  databaseURL: "https://fir-10997.firebaseio.com",
-  projectId: "fir-10997",
-  storageBucket: "fir-10997.appspot.com",
-  messagingSenderId: "203140966853"
+  apiKey: "AIzaSyA3-WdYxu0sQ4Vyvgm-2zj8FVhueiy_M9c",
+  authDomain: "task1-12e9d.firebaseapp.com",
+  databaseURL: "https://task1-12e9d.firebaseio.com",
+  projectId: "task1-12e9d",
+  storageBucket: "task1-12e9d.appspot.com",
+  messagingSenderId: "675340658609"
 };
 const fb = firebase.initializeApp(config);
 
