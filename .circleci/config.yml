@@ -1,0 +1,90 @@
+setImage: &setImage
+  docker:
+    - image: circleci/node:10-browsers
+  working_directory: ~/repo
+
+setRestore: &setRestore
+  restore_cache:
+    keys:
+      - v1-dependencies-{{ checksum "package.json" }}
+      - v1-dependencies-
+
+version: 2
+jobs:
+  save_cache:
+    <<: *setImage
+    steps:
+      - checkout
+
+      - <<: *setRestore
+
+      - run:
+          name: install-dependencies
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+  test:
+    <<: *setImage
+    steps:
+      - checkout
+
+      - <<: *setRestore
+
+      - run:
+          name: run-unit-tests
+          command: yarn test
+
+  build:
+    <<: *setImage
+    steps:
+      - checkout
+
+      - <<: *setRestore
+
+      - run:
+          name: build-artifact
+          command: yarn build
+      - store_artifacts:
+          path: ./build/
+      - persist_to_workspace:
+          root: ~/repo
+          paths: build
+
+  deploy:
+    <<: *setImage
+    steps:
+      - checkout
+      - <<: *setRestore
+      - attach_workspace:
+          at: ~/repo
+      - store_artifacts:
+          path: ./build/
+      - run: # test what token.
+          name: "What token?"
+          command: echo $FIREBASE_TOKEN
+      - run:
+          name: Deploy to Firebase hosting
+          command: ./node_modules/.bin/firebase deploy --only hosting --token $FIREBASE_TOKEN
+
+workflows:
+  version: 2
+  test-and-build-flow:
+    jobs:
+      - save_cache
+      - test:
+          requires:
+            - save_cache
+      - build:
+          requires:
+            - save_cache
+      - deploy:
+          context: Firebase
+          requires:
+            - build
+            - test
+          filters:
+                branches:
+                  only: master

@@ -1,0 +1,57 @@
+.status-like::before{
+  content: "\f004";
+  font-family: FontAwesome;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.unactive{
+  color: thistle; 
+}
+.active{
+color: salmon;
+}
+.status-like{
+  margin: 5px;
+}
+
+.status-repost{
+  margin: 5px;
+}
+.status-repost::before{
+  content: "\f14d";
+  font-family: FontAwesome;
+  font-size: 18px;
+  margin-right: 5px;
+  color: thistle;
+}
+
+.status-comment{
+  margin: 5px;
+}
+
+.status-comment::before{
+  content: "\f075";
+  font-family: FontAwesome;
+  font-size: 18px;
+  margin-right: 5px;
+  color: thistle;
+
+}
+.status-view{
+display: inline-block;
+  margin: 0 5px 0 30vw;
+}
+.status-view::before{
+  content: "\f06e";
+  font-family: FontAwesome;
+  font-size: 18px;
+  margin-right: 5px;
+  color: rgb(206, 113, 206);
+
+}
+.status{
+  display: flex;
+  margin-top: 40px;
+  margin-left: 2vw;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,22 @@
+.config{
+  display: inline-block;
+  margin: auto;
+  width: 8vw;
+  height: 8vh;
+
+  ul{
+    margin-top: 20px;
+    display: inline-block;
+    height: 8vh;
+    position: absolute;
+  }
+  ul:hover{
+    li{
+      visibility: visible;
+    }
+  }
+  li{
+    
+      visibility: hidden;
+  }
+}
