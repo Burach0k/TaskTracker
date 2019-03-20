@@ -16,10 +16,12 @@ class Authorization extends Component {
   login() {
     firebase.auth().then((user) => {
      this.props.userAction(user);
+     localStorage.setItem({user: user});
     });
   }
-  logout(){
 
+  logout(){
+     localStorage.clear();
   }
 
   render() {

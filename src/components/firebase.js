@@ -15,6 +15,6 @@ provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 export default {
   auth: () =>  fb.auth().signInWithPopup(provider),
-  getNew: () => firebase.firestore().collection("news").get(),
-  addNew: () => firebase.firestore().collection("news"),
+  getTodo: () => firebase.firestore().collection("ToDo").get(),
+  addTodo: () => firebase.firestore().collection("ToDo"),
 };

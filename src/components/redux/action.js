@@ -1,13 +1,13 @@
-export const action = post => {
+export const saveAction = post => {
   return {
-    type: 'SET_TYAN',
+    type: 'SAVE_TODO',
     payload: post,
   }
 }
 
-export const actionNews = post => {
+export const addAction = post => {
   return {
-    type: 'SAVE_TYAN',
+    type: 'ADD_TODO',
     payload: post,
   }
 }

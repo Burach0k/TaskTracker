@@ -1,8 +1,7 @@
 import firebase from '../firebase';
 
 export const initialState = {
-  item: [],
-  user: null,
+  todos: []
 };
 
 export function rootReducer(state = initialState, action) {
@@ -10,26 +9,33 @@ export function rootReducer(state = initialState, action) {
     case 'SET_TYAN':
     let item = state.item;
 
-    // firebase.addNew().add(action.payload);
-
     return Object.assign({}, state, {
       item: item.concat([action.payload]),
     })
 
-    case 'ADD_USER':
-    return Object.assign({}, state, {
-      user:{
-        name: action.payload.user.displayName,
-        imgUrl: action.payload.user.photoURL,
-      }
-    })
+    case 'SAVE_TODO':
 
-    case 'SAVE_TYAN':
-    firebase.addNew().add(action.payload);
-    let newitem = state.item;
-    return Object.assign({}, state, {
-      item: newitem.concat([action.payload]),
-    })
+      firebase.addTodo().add(action.payload);
+  
+      const newState2 = [].concat([state]);
+      // console.log(newState2)
+      newState2[0].todos.push(action.payload);
+    return newState2;
+
+
+    case 'ADD_TODO':
+
+    const newTodos = Object.assign({}, state.todos)
+    console.log(newTodos)
+//     const newState = newTodos
+//     newState.todos = newState.todos.concat([action.payload]);
+// console.log(newState)
+// // console.log(newState)
+    return //newState;
+
+    // return Object.assign({}, state, {
+    //   todos: newState.concat([action.payload]),
+    // })
 
     default:
     return state;
