@@ -1,5 +1,5 @@
-import { createStore } from 'redux'
+import { createStore } from 'redux';
 
-import { rootReducer, initialState } from './reduser'
+import { rootReducer, initialState } from './reduser';
 
-export const store = createStore(rootReducer, initialState)
+export const store = createStore(rootReducer, initialState);

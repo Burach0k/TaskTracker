@@ -2,15 +2,23 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux/CreateStore';
 import './App.scss';
-import AddTodo from './views/AddTodo/AddTodo'
-import WriteToDo from './views/WriteTodo/WriteTodo'
 import DisplayTodo from './controlls/DisplayTodo/DisplayTodo';
+import Header from './controlls/Headre/Header';
+import WriteTodo from './views/WriteTodo/WriteTodo';
+import ChangeColorTodo from './views/ChangeColorTodo/ChangeColorTodo';
+import AppStyle from './views/AppStyle/AppStyle';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faList, faTh, faCheck, faCog } from '@fortawesome/free-solid-svg-icons';
+
+console.log(faCheck);
+library.add(faList, faTh, faCheck, faCog);
 
 const App = () => (
-  <div className='container'>
+  <div className='app-container'>
     <Provider store={store}>
-  <WriteToDo />
-  <AddTodo />
+      <ChangeColorTodo />
+      <WriteTodo />
+      <Header />
       <DisplayTodo />
     </Provider>
   </div>

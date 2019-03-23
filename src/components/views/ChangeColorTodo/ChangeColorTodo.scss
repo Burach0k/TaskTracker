@@ -1,0 +1,31 @@
+#red-color-todo {
+  background-color: #F97083;
+  width: 30px;
+  height: 30px;
+}
+#blue-color-todo {
+  background-color: #514ED9;
+  width: 30px;
+  height: 30px;
+}
+#green-color-todo {
+  background-color: #A0F06C;
+  width: 30px;
+  height: 30px;
+}
+#white-color-todo {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+}
+#choose-color {
+  z-index: 9999;
+  position: absolute;
+  top: -80vh;
+}
+#choose-color ul{
+  display: flex;
+}
+.list-group-item{
+  color: black;
+}
