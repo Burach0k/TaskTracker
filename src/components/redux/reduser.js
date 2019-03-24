@@ -24,7 +24,7 @@ export const initialState = {
 export function rootReducer(state = initialState, action) {
   switch (action.type) {
     case 'SAVE_TODO':
-      firebase.todoCollection().set(action.payload);
+      firebase.todoCollection()..doc(action.payload.id).set(action.payload);
       return state;
 
     case 'ADD_TODO':
