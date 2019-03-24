@@ -95,7 +95,8 @@
     overflow: hidden;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
-    height: 19vh; }
+    min-height: 1vh;
+    height: 15vh; }
 
 .config-block ul {
   top: 5px;
@@ -122,11 +123,12 @@
   .card .task-discription {
     transition: height 3s ease-in-out; }
 
-.card:hover {
+.card:hover, .card-block:hover {
   height: auto; }
-  .card:hover .task-discription:hover {
+  .card:hover .task-discription:hover, .card-block:hover .task-discription:hover {
     overflow: visible;
-    height: auto; }
+    height: auto;
+    max-height: auto; }
 
 #no-complite-todos h2 {
   display: inline;
