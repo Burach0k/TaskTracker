@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -12,7 +11,7 @@ class SortTodo extends Component {
   }
 
   sortTime() {
-    let newSort = {
+    const newSort = {
       timeIncrease: true,
       timeDescending: false,
       priorityIncrease: false,
@@ -25,8 +24,9 @@ class SortTodo extends Component {
     }
     this.props.sortAction(newSort);
   }
+
   sortPriority() {
-    let newSort = {
+    const newSort = {
       timeIncrease: false,
       timeDescending: false,
       priorityIncrease: true,
@@ -43,10 +43,14 @@ class SortTodo extends Component {
   render() {
     return (
       <div id='header-config'>
-        <ul className = 'btn btn-primary'>
+        <ul className='btn btn-primary'>
           Sort
-          <li  className = 'btn btn-primary list-group-item' onClick={this.sortTime.bind(this)}>Time</li>
-          <li  className = 'btn btn-primary list-group-item' onClick={this.sortPriority.bind(this)}>priority</li>
+          <li className='btn btn-primary list-group-item' onClick={this.sortTime.bind(this)}>
+            Time
+          </li>
+          <li className='btn btn-primary list-group-item' onClick={this.sortPriority.bind(this)}>
+            priority
+          </li>
         </ul>
       </div>
     );

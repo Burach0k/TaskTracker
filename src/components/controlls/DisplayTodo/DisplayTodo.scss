@@ -1,34 +1,27 @@
-#no-complite-todos {
-  h2 {
-    display: inline;
-    max-width: 80vw;
-    margin: 0;
-  }
-}
-#complite-todos {
-}
-
-
-#no-complite-todos-block {
-  display: flex;
-  max-width: 80vw;
-  margin: 0 auto;
-  overflow-wrap: break-word;
-  flex-wrap: wrap;
-  height: auto;
-}
-#complite-todos-block {
-  display: flex;
-  max-width: 80vw;
-  margin: 0 auto;
-  overflow-wrap: break-word;
-  flex-wrap: wrap;
-}
-#todos-bar{
-  min-height: 80vh;
+@mixin h2-config {
   h2 {
     display: inline;
     max-width: 80vw;
     margin: 0 15vw;
   }
+}
+@mixin component-config {
+  display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+  height: auto;
+  flex-wrap: wrap;
+}
+#no-complite-todos {
+  @include h2-config;
+}
+#todos-bar {
+  min-height: 80vh;
+  @include h2-config;
+}
+
+#no-complite-todos-block,
+#complite-todos-block {
+  @include component-config;
 }

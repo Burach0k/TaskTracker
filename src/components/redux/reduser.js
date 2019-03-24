@@ -10,7 +10,7 @@ export const initialState = {
     priorityIncrease: false,
     priorityDescending: false,
   },
-  displayStyleTodo:{
+  displayStyleTodo: {
     block: false,
     line: true,
   },
@@ -50,36 +50,36 @@ export function rootReducer(state = initialState, action) {
         ...state,
         writeOrChange: action.payload,
       };
-    
-      case 'STATUS_MENU_ACTION':
+
+    case 'STATUS_MENU_ACTION':
       return {
         ...state,
         colorMenu: action.payload,
       };
 
-      case 'CHANGE_COLOR_APP':
+    case 'CHANGE_COLOR_APP':
       return {
         ...state,
         colorApp: action.payload,
       };
 
-      case 'DISPLAY_STYLE_TODO':
+    case 'DISPLAY_STYLE_TODO':
       return {
         ...state,
         displayStyleTodo: action.payload,
       };
 
     case 'CHANGE_TODO':
-    firebase
+      firebase
         .todoCollection()
         .doc(action.payload.id)
         .update(action.payload.changeItems);
-        let changeState = state.todos;
-        
-        changeState.map((val, index, mas) => {
-          if (action.payload.id === val.id){
-            for (const item in action.payload.changeItems) {
-              mas[index][item] = action.payload.changeItems[item];
+      const changeState = state.todos;
+
+      changeState.map((val, index, mas) => {
+        if (action.payload.id === val.id) {
+          for (const item in action.payload.changeItems) {
+            mas[index][item] = action.payload.changeItems[item];
           }
         }
       });
@@ -95,7 +95,7 @@ export function rootReducer(state = initialState, action) {
         .doc(action.payload)
         .delete();
 
-      let deleteState = state.todos;
+      const deleteState = state.todos;
       deleteState.map((val, index, mas) => {
         if (action.payload === val.id) mas.splice(index, 1);
       });

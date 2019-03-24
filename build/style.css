@@ -2,14 +2,261 @@
   padding: 0;
   margin: 0; }
 
-.container {
-  width: 50%;
-  display: block;
-  margin: auto;
-  min-height: 100vh; }
+#app-style {
+  margin-left: 100px; }
 
-#root {
-  width: 100%;
-  height: 100%;
-  background-color: #3a042a; }
+.mb-3 {
+  user-select: none;
+  display: inline-block;
+  width: 70vw;
+  height: auto;
+  margin: 5px 10vw;
+  filter: brightness(70%); }
+  .mb-3 .col-md-10 {
+    width: 50vw; }
+  .mb-3 .col-md-1 {
+    max-width: 10vw;
+    height: 10vh;
+    display: flex;
+    margin-left: 5px;
+    align-items: center; }
+    .mb-3 .col-md-1 img {
+      height: 8vh;
+      width: 8vh; }
+  .mb-3 .card-body {
+    display: block;
+    padding: 0; }
+    .mb-3 .card-body .task-name {
+      display: inline-block; }
+    .mb-3 .card-body .task-discription {
+      margin: 0;
+      overflow: hidden;
+      width: 60vw;
+      height: 6.5vh; }
+    .mb-3 .card-body .task-date,
+    .mb-3 .card-body .task-priority {
+      display: inline-block;
+      margin-left: 5px; }
+    .mb-3 .card-body h5,
+    .mb-3 .card-body p {
+      overflow-wrap: break-word;
+      margin: 3px 0;
+      font-size: 9pt;
+      padding: 0; }
+
+.task-ui {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  margin-left: auto; }
+
+.task-header {
+  width: calc(62vw - 30px);
+  height: 3.5vh;
+  display: flex; }
+
+.config {
+  margin-left: 5px;
+  display: inline-block; }
+  .config ul {
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0; }
+  .config ul:hover {
+    height: auto;
+    width: auto; }
+    .config ul:hover li {
+      padding: 5px;
+      display: block;
+      margin-left: 50px;
+      text-align: center;
+      font-size: 9pt;
+      visibility: visible; }
+    .config ul:hover li:hover {
+      background-color: royalblue; }
+  .config li {
+    display: none;
+    background-color: white; }
+
+.card-block {
+  max-width: 200px;
+  margin: 5px 5px;
+  filter: brightness(70%); }
+  .card-block h5 {
+    display: inline; }
+  .card-block p {
+    margin: 0 5px; }
+  .card-block .card-body {
+    padding: 0; }
+  .card-block .card-text {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    height: 19vh; }
+
+.config-block ul {
+  top: 5px;
+  right: 5px;
+  text-align: end;
+  width: 20px;
+  height: 20px; }
+
+.config-block ul:hover {
+  width: auto;
+  height: auto; }
+
+.task-status {
+  display: none; }
+
+.task-status.true {
+  display: inline; }
+
+.open-text {
+  display: inline-block; }
+
+.card {
+  transition: height 3s ease-in-out; }
+  .card .task-discription {
+    transition: height 3s ease-in-out; }
+
+.card:hover {
+  height: auto; }
+  .card:hover .task-discription:hover {
+    overflow: visible;
+    height: auto; }
+
+#no-complite-todos h2 {
+  display: inline;
+  max-width: 80vw;
+  margin: 0 15vw; }
+
+#todos-bar {
+  min-height: 80vh; }
+  #todos-bar h2 {
+    display: inline;
+    max-width: 80vw;
+    margin: 0 15vw; }
+
+#no-complite-todos-block,
+#complite-todos-block {
+  display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+  height: auto;
+  flex-wrap: wrap; }
+
+#line-list {
+  margin: 0 5px;
+  display: inline; }
+
+#block-list {
+  display: inline; }
+
+#list-style {
+  margin-right: 20vw;
+  text-align: end; }
+
+#header-config {
+  display: inline-block;
+  width: auto; }
+  #header-config ul {
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    top: 0; }
+  #header-config ul:hover li {
+    display: block;
+    text-align: center;
+    font-size: 9pt;
+    visibility: visible; }
+  #header-config ul:hover li:hover {
+    background-color: royalblue; }
+  #header-config li {
+    width: 70px;
+    display: none;
+    background-color: white; }
+
+#header {
+  height: 10vh;
+  max-width: 100vw;
+  display: flex; }
+  #header ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    margin-left: auto; }
+
+#user-login img {
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px; }
+
+#write {
+  z-index: 100;
+  display: inline-block;
+  width: 60vw;
+  border-radius: 5px;
+  position: absolute;
+  top: -80vh; }
+  #write input {
+    margin: 10px 0; }
+  #write button {
+    display: block;
+    margin-left: auto; }
+
+.input-group.mb-3 {
+  margin: 0;
+  height: 6vh;
+  width: 150px;
+  display: flex; }
+
+.form-control.statis-control {
+  margin: 0;
+  display: inline-block; }
+
+.input-group-text {
+  margin: 10px 0;
+  height: 38px;
+  width: 4vw; }
+
+#red-color-todo {
+  width: 30px;
+  height: 30px;
+  background-color: #f97083; }
+
+#blue-color-todo {
+  width: 30px;
+  height: 30px;
+  background-color: #514ed9; }
+
+#green-color-todo {
+  width: 30px;
+  height: 30px;
+  background-color: #a0f06c; }
+
+#white-color-todo {
+  width: 30px;
+  height: 30px;
+  background-color: white; }
+
+#choose-color {
+  z-index: 9999;
+  position: absolute;
+  top: -80vh; }
+  #choose-color ul {
+    display: flex; }
+
+.list-group-item {
+  user-select: none;
+  color: black; }
+
+footer {
+  height: 10vh;
+  background-color: #514ed9; }
 

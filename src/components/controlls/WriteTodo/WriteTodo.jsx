@@ -18,7 +18,7 @@ class WriteTodo extends Component {
     const menu = document.getElementById('write');
 
     menu.style.top = '-80vh';
-    
+
     const todo = {
       userImg: JSON.parse(localStorage.getItem('user')).user.photoURL,
       userName: JSON.parse(localStorage.getItem('user')).user.displayName,
@@ -27,7 +27,7 @@ class WriteTodo extends Component {
       priority: priority.value,
       id: uuid(),
       status: status.checked,
-      date: new Date().toLocaleDateString('en-US'),
+      date: `${new Date().toLocaleTimeString('en-US')} ${new Date().toLocaleDateString('en-US')}`,
       color: 'white',
     };
 
@@ -39,6 +39,7 @@ class WriteTodo extends Component {
       this.props.changeAction({ changeItems: todo, id: this.props.changeTodoId });
     }
   }
+
   close() {
     const menu = document.getElementById('write');
     menu.style.top = '-80vh';
@@ -46,9 +47,11 @@ class WriteTodo extends Component {
 
   render() {
     return (
-      <form style = {{backgroundColor:this.props.colorApp}} id='write'>
+      <form style={{ backgroundColor: this.props.colorApp }} id='write'>
         <div className='card-body'>
-          <div className ='btn btn-primary' onClick={this.close.bind(this)}>X</div>
+          <div className='btn btn-primary' onClick={this.close.bind(this)}>
+            X
+          </div>
           <p className='card-title' id='write-title'>
             Введите данные для новой todo
           </p>

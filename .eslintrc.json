@@ -10,7 +10,7 @@
   "globals": {
     "React": true
   },
-  
+
   "parser": "babel-eslint",
 
   "ecmaFeatures": {

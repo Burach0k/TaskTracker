@@ -2,15 +2,17 @@
   user-select: none;
   display: inline-block;
   width: 70vw;
-  height: 10vh;
+  height: auto;
   margin: 5px 10vw;
   filter: brightness(70%);
+
   .col-md-10 {
     width: 50vw;
   }
+
   .col-md-1 {
     max-width: 10vw;
-    img{
+    img {
       height: 8vh;
       width: 8vh;
     }
@@ -19,23 +21,28 @@
     margin-left: 5px;
     align-items: center;
   }
+
   .card-body {
     display: block;
     padding: 0;
+
     .task-name {
       display: inline-block;
     }
+
     .task-discription {
       margin: 0;
       overflow: hidden;
       width: 60vw;
       height: 6.5vh;
     }
+
     .task-date,
     .task-priority {
       display: inline-block;
       margin-left: 5px;
     }
+    
     h5,
     p {
       overflow-wrap: break-word;
@@ -51,8 +58,9 @@
   display: flex;
   margin-left: auto;
 }
+
 .task-header {
-  width: calc( 62vw - 30px);
+  width: calc(62vw - 30px);
   height: 3.5vh;
   display: flex;
 }
@@ -60,47 +68,62 @@
 .config {
   margin-left: 5px;
   display: inline-block;
+
   ul {
     list-style: none;
     display: inline-block;
     position: absolute;
     width: 20px;
     height: 20px;
+    margin-bottom: 0;
   }
+
   ul:hover {
     height: auto;
     width: auto;
+
     li {
-      padding: 8px;
+      padding: 5px;
       display: block;
       margin-left: 50px;
       text-align: center;
       font-size: 9pt;
       visibility: visible;
     }
+    
     li:hover {
       background-color: royalblue;
     }
   }
+
   li {
     display: none;
     background-color: white;
-    // visibility: hidden;
   }
 }
 
 .card-block {
   max-width: 200px;
-  margin: 0 5px;
+  margin: 5px 5px;
   filter: brightness(70%);
+
   h5 {
     display: inline;
   }
+
   p {
     margin: 0 5px;
   }
+
   .card-body {
     padding: 0;
+  }
+
+  .card-text {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    height: 19vh;
   }
 }
 .config-block {
@@ -111,6 +134,7 @@
     width: 20px;
     height: 20px;
   }
+
   ul:hover {
     width: auto;
     height: auto;
@@ -122,4 +146,23 @@
 }
 .task-status.true {
   display: inline;
+}
+
+.open-text {
+  display: inline-block;
+}
+.card {
+  transition: height 3s ease-in-out;
+  
+  .task-discription {
+    transition: height 3s ease-in-out;
+  }
+}
+.card:hover {
+  .task-discription:hover {
+    overflow: visible;
+    height: auto;
+  }
+
+  height: auto;
 }

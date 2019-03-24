@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './DisplayStyleTodo.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { changeStyleTodo } from '../../redux/action';
@@ -11,12 +9,14 @@ class DisplayStyleTodo extends Component {
   constructor(props) {
     super(props);
   }
+
   chooseList() {
     this.props.changeStyleTodo({
       block: false,
       line: true,
     });
   }
+
   chooseBlock() {
     this.props.changeStyleTodo({
       block: true,
@@ -26,7 +26,7 @@ class DisplayStyleTodo extends Component {
 
   render() {
     return (
-      <div id = 'list-style'>
+      <div id='list-style'>
         <div onClick={this.chooseList.bind(this)} id='line-list'>
           <FontAwesomeIcon icon='list' />
         </div>

@@ -10,33 +10,40 @@ import {
   statusMenuAction,
 } from '../../redux/action';
 import './Task.scss';
+
 class Task extends Component {
   constructor(props) {
     super(props);
   }
+
   delete(id) {
     if (localStorage.getItem('user')) this.props.deleteAction(id);
   }
+
   change(id) {
     if (localStorage.getItem('user')) {
       const menu = document.getElementById('write');
-      menu.style.top = document.documentElement.scrollTop + document.documentElement.clientHeight/5 +'px';
+      menu.style.top = `${document.documentElement.scrollTop +
+        document.documentElement.clientHeight / 5}px`;
       menu.style.left = '20vw';
       this.props.changeIdAction(id);
       this.props.writeOrChangeAction(false);
     }
   }
+
   complite(data) {
     if (localStorage.getItem('user')) {
-      let newDate = data;
+      const newDate = data;
       newDate.status = true;
       this.props.changeAction({ changeItems: newDate, id: data.id });
     }
   }
+
   changeColor(id) {
     if (localStorage.getItem('user')) {
       const colorMenu = document.getElementById('choose-color');
-      colorMenu.style.top = document.documentElement.scrollTop + document.documentElement.clientHeight/2 +'px';
+      colorMenu.style.top = `${document.documentElement.scrollTop +
+        document.documentElement.clientHeight / 2}px`;
       colorMenu.style.left = '35vw';
       this.props.changeIdAction(id);
       this.props.statusMenuAction({ forTodo: true, forApp: false });
@@ -58,6 +65,7 @@ class Task extends Component {
     //   console.log(targerTodo.style.left)
     // }
   }
+
   render() {
     if (this.props.style.line)
       return (
@@ -73,7 +81,7 @@ class Task extends Component {
             <div className='col-md-10'>
               <div className='card-body'>
                 <div className='task-header'>
-                  <div className={'task-status ' + this.props.data.status}>
+                  <div className={`task-status ${this.props.data.status}`}>
                     <FontAwesomeIcon icon='check' />
                   </div>
                   <h5 className='task-name'>{this.props.data.name}</h5>
@@ -89,13 +97,28 @@ class Task extends Component {
                   <div className='config'>
                     <ul>
                       <FontAwesomeIcon icon='cog' />
-                      <li  className = 'btn btn-primary list-group-item' onClick={this.change.bind(this, this.props.data.id)}>change</li>
-                      <li  className = 'btn btn-primary list-group-item' onClick={this.delete.bind(this, this.props.data.id)}>delete</li>
-                      <li  className = 'btn btn-primary list-group-item' onClick={this.complite.bind(this, this.props.data)}>complite</li>
-                      <li  className = 'btn btn-primary list-group-item' onClick={this.changeColor.bind(this, this.props.data.id)}>color</li>
+                      <li
+                        className='btn btn-primary list-group-item'
+                        onClick={this.change.bind(this, this.props.data.id)}>
+                        change
+                      </li>
+                      <li
+                        className='btn btn-primary list-group-item'
+                        onClick={this.delete.bind(this, this.props.data.id)}>
+                        delete
+                      </li>
+                      <li
+                        className='btn btn-primary list-group-item'
+                        onClick={this.complite.bind(this, this.props.data)}>
+                        complite
+                      </li>
+                      <li
+                        className='btn btn-primary list-group-item'
+                        onClick={this.changeColor.bind(this, this.props.data.id)}>
+                        color
+                      </li>
                     </ul>
                   </div>
-
                 </div>
                 <p className='task-discription'>{this.props.data.discription}</p>
               </div>
@@ -105,10 +128,10 @@ class Task extends Component {
       );
     if (this.props.style.block)
       return (
-        <div  style={{ backgroundColor: this.props.data.color }} className='card card-block'>
+        <div style={{ backgroundColor: this.props.data.color }} className='card card-block'>
           <img src={this.props.data.userImg} className='card-img-top' alt='user photo' />
           <div className='card-body'>
-            <div className={'task-status ' + this.props.data.status}>
+            <div className={`task-status ${this.props.data.status}`}>
               <FontAwesomeIcon icon='check' />
             </div>
 
@@ -125,13 +148,28 @@ class Task extends Component {
             <div className='config config-block'>
               <ul>
                 <FontAwesomeIcon icon='cog' />
-                <li className = 'btn btn-primary list-group-item' onClick={this.change.bind(this, this.props.data.id)}>change</li>
-                <li className = 'btn btn-primary list-group-item' onClick={this.delete.bind(this, this.props.data.id)}>delete</li>
-                <li className = 'btn btn-primary list-group-item' onClick={this.complite.bind(this, this.props.data)}>complite</li>
-                <li className = 'btn btn-primary list-group-item' onClick={this.changeColor.bind(this, this.props.data.id)}>color</li>
+                <li
+                  className='btn btn-primary list-group-item'
+                  onClick={this.change.bind(this, this.props.data.id)}>
+                  change
+                </li>
+                <li
+                  className='btn btn-primary list-group-item'
+                  onClick={this.delete.bind(this, this.props.data.id)}>
+                  delete
+                </li>
+                <li
+                  className='btn btn-primary list-group-item'
+                  onClick={this.complite.bind(this, this.props.data)}>
+                  complite
+                </li>
+                <li
+                  className='btn btn-primary list-group-item'
+                  onClick={this.changeColor.bind(this, this.props.data.id)}>
+                  color
+                </li>
               </ul>
             </div>
-            <p className='card-text' />
           </div>
         </div>
       );

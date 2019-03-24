@@ -1,32 +1,30 @@
-#red-color-todo {
-  background-color: #F97083;
+@mixin add-color($color) {
   width: 30px;
   height: 30px;
+
+  background-color: $color;
+}
+#red-color-todo {
+  @include add-color(#f97083);
 }
 #blue-color-todo {
-  background-color: #514ED9;
-  width: 30px;
-  height: 30px;
+  @include add-color(#514ed9);
 }
 #green-color-todo {
-  background-color: #A0F06C;
-  width: 30px;
-  height: 30px;
+  @include add-color(#a0f06c);
 }
 #white-color-todo {
-  background-color: white;
-  width: 30px;
-  height: 30px;
+  @include add-color(white);
 }
 #choose-color {
   z-index: 9999;
   position: absolute;
   top: -80vh;
+  ul {
+    display: flex;
+  }
 }
-#choose-color ul{
-  display: flex;
-}
-.list-group-item{
+.list-group-item {
   user-select: none;
   color: black;
 }

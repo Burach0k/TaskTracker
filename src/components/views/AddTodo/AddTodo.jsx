@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import firebase from '../../firebase';
 
 class AddTodo extends Component {
   constructor(props) {
@@ -8,7 +6,7 @@ class AddTodo extends Component {
   }
 
   addTodo() {
-    if(localStorage.getItem('user')){
+    if (localStorage.getItem('user')) {
       const menu = document.getElementById('write');
       menu.style.top = '100px';
       menu.style.left = '20vw';
@@ -16,7 +14,11 @@ class AddTodo extends Component {
   }
 
   render() {
-    return <button className ='btn btn-primary' onClick={this.addTodo.bind(this)}>Add ToDo</button>;
+    return (
+      <button className='btn btn-primary' onClick={this.addTodo.bind(this)}>
+        Add ToDo
+      </button>
+    );
   }
 }
 

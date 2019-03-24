@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import firebase from '../../firebase';
-import { userAction } from '../../redux/authAction';
 import './Authorization.scss';
 
 class Authorization extends Component {
@@ -27,10 +24,10 @@ class Authorization extends Component {
   }
 
   render() {
-    let user = JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(localStorage.getItem('user'))
       ? JSON.parse(localStorage.getItem('user'))
       : this.state.user;
-    if (!user&&this.state.user === undefined)
+    if (!user && this.state.user === undefined)
       return (
         <button className='login btn btn-primary' onClick={this.login.bind(this)}>
           {'sign in'}
@@ -54,11 +51,4 @@ function mapStateToProps(store) {
   };
 }
 
-function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ userAction }, dispatch);
-}
-
-export default connect(
-  mapStateToProps,
-  matchDispatchToProps
-)(Authorization);
+export default connect(mapStateToProps)(Authorization);

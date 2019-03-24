@@ -1,0 +1,32 @@
+@mixin input-group($margin, $height, $width) {
+  margin: $margin;
+  height: $height;
+  width: $width;
+}
+
+#write {
+  z-index: 100;
+  display: inline-block;
+  width: 60vw;
+  border-radius: 5px;
+  position: absolute;
+  top: -80vh;
+  input {
+    margin: 10px 0;
+  }
+  button {
+    display: block;
+    margin-left: auto;
+  }
+}
+.input-group.mb-3 {
+  @include input-group(0, 6vh, 150px);
+  display: flex;
+}
+.form-control.statis-control {
+  margin: 0;
+  display: inline-block;
+}
+.input-group-text {
+  @include input-group(10px 0, 38px, 4vw);
+}
