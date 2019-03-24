@@ -67,3 +67,10 @@ export const changeColorApp = (post) => {
     payload: post,
   };
 };
+
+export const dragDropActon = (post) => {
+  return {
+    type: 'CHANGE_POSITION',
+    payload: post,
+  };
+};

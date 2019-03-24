@@ -3,7 +3,7 @@ import './DisplayStyleTodo.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { changeStyleTodo } from '../../redux/action';
+import { changeStyleTodo } from '../../controlls/redux/action';
 
 class DisplayStyleTodo extends Component {
   constructor(props) {

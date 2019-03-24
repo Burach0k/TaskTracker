@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import './SortTodo.scss';
-import { sortAction } from '../../redux/action';
+import { sortAction } from '../../controlls/redux/action';
 
 class SortTodo extends Component {
   constructor(props) {

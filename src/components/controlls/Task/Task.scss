@@ -123,7 +123,8 @@
     overflow: hidden;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
-    height: 19vh;
+    min-height: 1vh;
+    height: 15vh;
   }
 }
 .config-block {
@@ -158,11 +159,12 @@
     transition: height 3s ease-in-out;
   }
 }
-.card:hover {
+.card:hover, .card-block:hover{
   .task-discription:hover {
     overflow: visible;
     height: auto;
+    max-height: auto;
   }
-
+  
   height: auto;
 }

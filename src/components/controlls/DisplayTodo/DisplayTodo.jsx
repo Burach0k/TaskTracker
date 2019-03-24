@@ -6,7 +6,7 @@ import firebase from '../../firebase';
 import Task from '../Task/Task';
 import './DisplayTodo.scss';
 import DisplayStyleTodo from '../../views/DisplayStyleTodo/DisplayStyleTodo';
-import { addAction } from '../../redux/action';
+import { addAction } from '../redux/action';
 import SortTodo from '../../views/SortTodo/SortTodo';
 
 class DisplayTodo extends Component {

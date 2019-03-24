@@ -3,7 +3,7 @@ import './WriteTodo.scss';
 import uuid from 'uuid/v1';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addAction, saveAction, changeAction, writeOrChangeAction } from '../../redux/action';
+import { addAction, saveAction, changeAction, writeOrChangeAction } from '../redux/action';
 
 class WriteTodo extends Component {
   constructor(props) {
@@ -38,6 +38,10 @@ class WriteTodo extends Component {
       this.props.writeOrChangeAction(true);
       this.props.changeAction({ changeItems: todo, id: this.props.changeTodoId });
     }
+    name.value = '';
+    priority.value = '';
+    discription.value = '';
+    status.checked = false;
   }
 
   close() {

@@ -8,7 +8,7 @@ import {
   writeOrChangeAction,
   changeAction,
   statusMenuAction,
-} from '../../redux/action';
+} from '../redux/action';
 import './Task.scss';
 
 class Task extends Component {

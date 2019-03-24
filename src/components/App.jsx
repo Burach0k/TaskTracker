@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './redux/CreateStore';
+import { store } from '../components/controlls/redux/CreateStore';
 import './App.scss';
 import DisplayTodo from './controlls/DisplayTodo/DisplayTodo';
 import Header from './controlls/Headre/Header';

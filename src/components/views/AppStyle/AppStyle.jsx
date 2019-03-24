@@ -7,7 +7,7 @@ import {
   writeOrChangeAction,
   changeAction,
   statusMenuAction,
-} from '../../redux/action';
+} from '../../controlls/redux/action';
 import './AppStyle.scss';
 
 class AppStyle extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ChangeColorTodo.scss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { changeAction, changeColorApp } from '../../redux/action';
+import { changeAction, changeColorApp } from '../../controlls/redux/action';
 
 class ChangeColorTodo extends Component {
   constructor(props) {
