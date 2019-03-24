@@ -38,6 +38,10 @@ class WriteTodo extends Component {
       this.props.writeOrChangeAction(true);
       this.props.changeAction({ changeItems: todo, id: this.props.changeTodoId });
     }
+    name.value = '';
+    priority.value = '';
+    discription.value = '';
+    status.checked = false;
   }
 
   close() {
