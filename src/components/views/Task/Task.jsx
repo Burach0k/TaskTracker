@@ -86,7 +86,6 @@ class Task extends Component {
                       <p className='task-priority'>{this.props.data.priority}</p>
                     </li>
                   </ul>
-
                   <div className='config'>
                     <ul>
                       <FontAwesomeIcon icon='cog' />
@@ -96,6 +95,7 @@ class Task extends Component {
                       <li  className = 'btn btn-primary list-group-item' onClick={this.changeColor.bind(this, this.props.data.id)}>color</li>
                     </ul>
                   </div>
+
                 </div>
                 <p className='task-discription'>{this.props.data.discription}</p>
               </div>
@@ -125,10 +125,10 @@ class Task extends Component {
             <div className='config config-block'>
               <ul>
                 <FontAwesomeIcon icon='cog' />
-                <li onClick={this.change.bind(this, this.props.data.id)}>change</li>
-                <li onClick={this.delete.bind(this, this.props.data.id)}>delete</li>
-                <li onClick={this.complite.bind(this, this.props.data)}>complite</li>
-                <li onClick={this.changeColor.bind(this, this.props.data.id)}>color</li>
+                <li className = 'btn btn-primary list-group-item' onClick={this.change.bind(this, this.props.data.id)}>change</li>
+                <li className = 'btn btn-primary list-group-item' onClick={this.delete.bind(this, this.props.data.id)}>delete</li>
+                <li className = 'btn btn-primary list-group-item' onClick={this.complite.bind(this, this.props.data)}>complite</li>
+                <li className = 'btn btn-primary list-group-item' onClick={this.changeColor.bind(this, this.props.data.id)}>color</li>
               </ul>
             </div>
             <p className='card-text' />

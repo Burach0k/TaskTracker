@@ -42,7 +42,7 @@ class SortTodo extends Component {
 
   render() {
     return (
-      <div className='config' id='header-config'>
+      <div id='header-config'>
         <ul className = 'btn btn-primary'>
           Sort
           <li  className = 'btn btn-primary list-group-item' onClick={this.sortTime.bind(this)}>Time</li>

@@ -46,7 +46,7 @@ class WriteTodo extends Component {
 
   render() {
     return (
-      <form id='write'>
+      <form style = {{backgroundColor:this.props.colorApp}} id='write'>
         <div className='card-body'>
           <div className ='btn btn-primary' onClick={this.close.bind(this)}>X</div>
           <p className='card-title' id='write-title'>
@@ -107,15 +107,12 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators({ saveAction, addAction, changeAction, writeOrChangeAction }, dispatch);
 }
 
-// BeginnerControl.propTypes = {
-//   name: PropTypes.string.isRequired,
-// };
-
 function mapStateToProps(store) {
   return {
     todos: store.todos,
     writeOrChange: store.writeOrChange,
     changeTodoId: store.changeTodoId,
+    colorApp: store.colorApp,
   };
 }
 

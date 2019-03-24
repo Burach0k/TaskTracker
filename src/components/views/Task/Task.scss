@@ -1,5 +1,4 @@
 .mb-3 {
-  z-index: 100;
   user-select: none;
   display: inline-block;
   width: 70vw;
@@ -7,9 +6,14 @@
   margin: 5px 10vw;
   filter: brightness(70%);
   .col-md-10 {
-    width: auto;
+    width: 50vw;
   }
   .col-md-1 {
+    max-width: 10vw;
+    img{
+      height: 8vh;
+      width: 8vh;
+    }
     height: 10vh;
     display: flex;
     margin-left: 5px;
@@ -48,12 +52,13 @@
   margin-left: auto;
 }
 .task-header {
-  width: 60vw;
+  width: calc( 62vw - 30px);
   height: 3.5vh;
   display: flex;
 }
+
 .config {
-  margin-left: 20px;
+  margin-left: 5px;
   display: inline-block;
   ul {
     list-style: none;
@@ -66,7 +71,9 @@
     height: auto;
     width: auto;
     li {
-      margin-left: 30px;
+      padding: 8px;
+      display: block;
+      margin-left: 50px;
       text-align: center;
       font-size: 9pt;
       visibility: visible;
@@ -76,8 +83,9 @@
     }
   }
   li {
+    display: none;
     background-color: white;
-    visibility: hidden;
+    // visibility: hidden;
   }
 }
 

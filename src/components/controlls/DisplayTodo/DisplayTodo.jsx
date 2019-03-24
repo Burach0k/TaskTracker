@@ -81,8 +81,8 @@ class DisplayTodo extends Component {
 
     return (
       <div style={{backgroundColor: this.props.styleApp, filter: 'brightness(130%)'}} id='todos-bar'>
-        <AppStyle />
         <SortTodo />
+        <AppStyle />
         <DisplayStyleTodo />
         <h2>To do ({this.noComplite.length})</h2>
         <div id={style.noComplite}>{this.noComplite.sort(this.comparator.bind(this))}</div>

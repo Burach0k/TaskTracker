@@ -1,11 +1,8 @@
 #write{
-  z-index: 10000;
-  
+  z-index: 100;
   display: inline-block;
   
   width: 60vw;
-
-  background-color: thistle;
 
   border-radius: 5px;
 
@@ -31,7 +28,7 @@
   display: inline-block;
 }
 .input-group-text{
-    margin: 10px 0;
-    height: 6vh;
+    margin: 10px 0px;
+    height: 38px;
     width: 4vw;
 }

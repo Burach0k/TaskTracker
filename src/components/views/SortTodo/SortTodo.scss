@@ -1,17 +1,28 @@
  #header-config{
-  margin: 0;
-   widows: auto;
+  display: inline-block;
+  width: auto;
   ul {
-    top: 0;
     list-style: none;
     display: inline-block;
     position: absolute;
-    height: 40px;
+    width: 100px;
+    top: 0;
   }
-   ul:hover{
-     display: inline-block;
-   }
-  li{
-    display: block;
+  ul:hover {
+    li {
+      display: block;
+      text-align: center;
+      font-size: 9pt;
+      visibility: visible;
+    }
+    li:hover {
+      background-color: royalblue;
+    }
   }
- }
+  li {
+    width: 70px;
+    display: none;
+    background-color: white;
+    // visibility: hidden;
+  }
+}
